@@ -1,0 +1,12 @@
+services:
+  db:
+    platform: linux/amd64
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: workos
+      MYSQL_DATABASE: slack
+    ports:
+      - "3307:3306"
+    volumes:
+      - $HOME/Desktop/MySQL-Snippets/school.sql:/school.sql
